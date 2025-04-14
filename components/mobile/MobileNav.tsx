@@ -5,11 +5,13 @@ import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { ModeToggle } from '@/components/ModeToggle'
 import { UserButton } from '@clerk/nextjs'
+import { useConversationIdHook } from '@/hooks/useConversationIdHook'
 
 const MobileNav = () => {
     const paths = usePathHook()
+    const { isActive } = useConversationIdHook()
     return (
-        <div className="lg:hidden fixed bottom-0 inset-x-0 w-full flex items-center justify-around px-2 py-2 border-t-4">
+        <div className={cn("lg:hidden fixed bottom-0 inset-x-0 w-full flex items-center justify-around px-2 py-2 border-t-4",isActive && "hidden")}>
             {paths.map(({ href, label, isActive, icon: Icon }) => (
                 <Link
                     key={label}

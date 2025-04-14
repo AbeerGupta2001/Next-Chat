@@ -5,7 +5,7 @@ import UserList from '@/components/conversations/UserList'
 
 const ConversationPageLayout = ({ children }: { children: ReactNode }) => {
     return (
-        <div className="w-full h-full lg:flex flex-none">
+        <div className="w-full h-full flex">
             <ActionComponent
                 label="Conversations"
                 ActionNode={<AddConversation />}
